@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.5;
+        }
+        .gene-container {
+            max-width: 100%;
+            max-height: 150px;
+            overflow: auto; 
+            word-wrap: break-word;
+            border: 1px solid #ccc;
+            padding: 10px; 
+            background-color: #f9f9f9; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Classification Result</h1>
+    <p><strong>Input Gene:</strong></p>
+    <div class="gene-container">
+        {{ gene }}
+    </div>
+    <p><strong>Predicted Organism:</strong> {{ prediction }}</p>
+    <p><strong>Chunk Size:</strong> {{ chunk_size }}</p>
+    <p><strong>k:</strong> {{ k }}</p>
+    <a href="/">Classify another gene</a>
+</body>
+</html>
