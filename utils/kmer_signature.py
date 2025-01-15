@@ -66,6 +66,10 @@ def compute_kmer_signature_bits(sequence, k = 2):
 
     # generate the signature vector
     possible_kmers = generate_all_canonical_kmers_bits(k)
-    signature_vector = [kmer_counts[kmer] for kmer in possible_kmers]
+    total_kmers = sum(kmer_counts.values())
+    signature_vector = [
+        kmer_counts[kmer] / total_kmers if total_kmers > 0 else 0
+        for kmer in possible_kmers
+    ]
 
     return signature_vector
